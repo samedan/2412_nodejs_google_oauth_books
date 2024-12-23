@@ -69,3 +69,16 @@
 
 > passport.js -> console.log in Backend(profile)
 > ![Profile](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print02.jpg)
+
+ > error on passport.js -> let user = await User.findById()
+
+ ### Menu
+ # Partial menu file
+ > /views/partials/_header.hbs
+
+ > /views/layouts/main.hbs -> {{> _header}}
+
+ # Initialize Materialize on main.hbs
+ > <script>M.Sinenav...
+
+ > > ![Nav Menu](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print03.jpg)
