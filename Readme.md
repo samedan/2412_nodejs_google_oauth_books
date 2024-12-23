@@ -66,3 +66,6 @@
 
 ## Routes
 > /routes/auth.js
+
+> passport.js -> console.log in Backend(profile)
+> ![Profile](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print02.jpg)
