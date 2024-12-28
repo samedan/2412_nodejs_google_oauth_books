@@ -169,3 +169,29 @@ Post story editor/form
 ### Pass the Author edit Icon
 
 > > ![Author Icon](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print06.jpg)
+
+### Edit Page
+
+# Route
+
+> /routes/stories.js -> router.get("/edit/:id")
+
+# View/template
+
+> /views/stories/edit.hbs
+
+# Select public/private
+
+> /helpers/hbs.js -> export selectOption function
+
+> register the function in app.js
+
+> use it in /views/stories/edit.hbs -> {{#selectOption story.status}}
+
+### PUT Delete edit story
+
+# Method Override
+
+> app.js methodOverride -> const methodOverride = require("method-override");
+
+> edit.hbs -> <input type="hidden" name="_method" value="PUT" />

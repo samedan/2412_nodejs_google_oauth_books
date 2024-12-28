@@ -1,0 +1,38 @@
+<h3>Edit story</h3>
+<div class="row">
+  <form action="/stories/{{story._id}}" method="POST" class="col s12">
+    {{! Method  override replaces Method to PUT }}
+    <input type="hidden" name="_method" value="PUT" />
+
+    {{! Title }}
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="title" name="title" value="{{story.title}}" />
+        <label for="title">Title</label>
+      </div>
+    </div>
+    {{! Status - initialized Materialized CSS in main.hbs}}
+    <div class="row">
+      <div class="input-field">
+        <select id="status" name="status">
+          {{#selectOption story.status}}
+            <option value="public" selected>Public</option>
+            <option value="private">Private</option>
+          {{/selectOption}}
+        </select>
+        <label for="status">Status</label>
+      </div>
+    </div>
+    {{! Body of story }}
+    <div class="row">
+      <div class="input-field">
+        <h5>Tell us tour story:</h5>
+        <textarea id="body" name="body">{{story.body}}</textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Save" class="btn" />
+      <a href="/dashboard" class="btn orange">Cancel </a>
+    </div>
+  </form>
+</div>
