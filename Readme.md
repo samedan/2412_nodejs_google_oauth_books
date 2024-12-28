@@ -122,3 +122,12 @@
 # Display user data in /views/dashboard.hbs
 
 > dashboard.hbs -> <h3>Welcome {{name}}</h3>
+
+### Add Data Stories
+
+# table in dasbboard.hbs
+
+> /models/Story.js
+
+> add Button in Partials: /views/partials/\_add_btn.hbs
+> add the Button in /views/layouts/main template : {{> _add_btn}}
