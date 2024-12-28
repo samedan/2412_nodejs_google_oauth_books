@@ -147,3 +147,7 @@ Post story editor/form
 > app.js -> app.use(express.urlencoded({ extended: false }));
 
 > ![Stories table](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print05.jpg)
+
+# Moment Date Locale (fr)
+
+> /helpers/hbs.js -> moment(date).locale("fr").format("LLLL");
