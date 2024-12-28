@@ -151,3 +151,21 @@ Post story editor/form
 # Moment Date Locale (fr)
 
 > /helpers/hbs.js -> moment(date).locale("fr").format("LLLL");
+
+### Helpers for Body text
+
+> /helpers/hbs.js -> truncate, stripTags
+
+### Pass User Logged In (Not author User) in templates
+
+# Global Variable: res.LOCALS.user
+
+> app.js -> res.locals.user = req.user
+
+# Access it in template inside of {{#each stories}} {{/each}}
+
+> /views/stories/index.hbs -> ../user
+
+### Pass the Author edit Icon
+
+> > ![Author Icon](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print06.jpg)

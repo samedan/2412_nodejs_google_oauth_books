@@ -33,13 +33,13 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Helper functions
-const { formatDate } = require("./helpers/hbs");
+const { formatDate, stripTags, truncate, editIcon } = require("./helpers/hbs");
 
 // Handlebars
 app.engine(
   ".hbs",
   exphbs.engine({
-    helpers: { formatDate },
+    helpers: { formatDate, stripTags, truncate, editIcon },
     defaultLayout: "main",
     extname: ".hbs",
   })
@@ -60,6 +60,12 @@ app.use(
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set Global Variable middleware
+app.use(function (req, res, next) {
+  res.locals.authedInUser = req.user || null;
+  next();
+});
 
 //Static folder
 app.use(express.static(path.join(__dirname, "public")));
