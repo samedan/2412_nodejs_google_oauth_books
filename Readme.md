@@ -131,3 +131,19 @@
 
 > add Button in Partials: /views/partials/\_add_btn.hbs
 > add the Button in /views/layouts/main template : {{> _add_btn}}
+
+```
+Post story editor/form
+```
+
+### Data editor CKEDITOR
+
+> main.hbs - initialize
+
+> replaces 'name="body"' in <textarea></textarea> in add.hbs with CKEDITOR
+
+## BodyParser Middleware
+
+> app.js -> app.use(express.urlencoded({ extended: false }));
+
+> ![Stories table](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print05.jpg)
