@@ -168,7 +168,7 @@ Post story editor/form
 
 ### Pass the Author edit Icon
 
-> > ![Author Icon](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print06.jpg)
+> ![Author Icon](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print06.jpg)
 
 ### Edit Page
 
@@ -195,3 +195,21 @@ Post story editor/form
 > app.js methodOverride -> const methodOverride = require("method-override");
 
 > edit.hbs -> <input type="hidden" name="_method" value="PUT" />
+
+### Flash message
+
+> "connect-flash": "^0.1.1",
+
+> const flash = require("connect-flash");
+
+> app.use(flash());
+
+# Route
+
+> req.flash("success", "Story succesfully deleted");
+
+# Template
+
+> {{#if success}} {{success}} {{/if}}
+
+> ![Delete](https://github.com/samedan/2412_nodejs_google_oauth_books/blob/main/public/images/print07.jpg)

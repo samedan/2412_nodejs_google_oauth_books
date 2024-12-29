@@ -13,6 +13,8 @@ const mongoose = require("mongoose");
 // Allow PUT request
 const methodOverride = require("method-override");
 const path = require("path");
+// messages
+const flash = require("connect-flash");
 
 // load config
 dotenv.config({ path: "./config/config.env" });
@@ -40,13 +42,15 @@ app.use(
     }
   })
 );
+// Messages
+app.use(flash());
 
 // Logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Helper functions
+// Helper functionsloca
 const {
   formatDate,
   stripTags,
@@ -77,6 +81,7 @@ app.use(
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   })
 );
+
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -84,6 +89,12 @@ app.use(passport.session());
 // Set Global Variable middleware
 app.use(function (req, res, next) {
   res.locals.authedInUser = req.user || null;
+  next();
+});
+
+// Set Global Message Middlewar
+app.use((req, res, next) => {
+  app.locals.success = req.flash("success");
   next();
 });
 
